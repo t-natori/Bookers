@@ -1,5 +1,23 @@
 <h1>Books</h1>
-<p></p>
+<table>
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>body</th>
+            <th>(link)*3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <%= @books.each do |book| %>
+            <td><%= book.title %></td>
+            <td><%= book.body %></td>
+            <td><%= link_to 'Show', '/show' %></td>
+            <td><%= link_to 'Edit', '/edit' %></td>
+            <td>Destroy</td>
+        </tr>
+    </tbody>
+</table>
 
 
 <h2>New Book</h2>
