@@ -1,24 +1,29 @@
 <h2>Books</h2>
 <table>
-    <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th colspan="3"></th>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th colspan="3"></th>
     </tr>
-    <% @books.each do |book| %>
-    <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
+    </thead>
     
-        <td><%= link_to 'Show', '' %></td>
-        <td><%= link_to 'Edit', '' %></td>
-        <td><%= link_to 'Destroy', '' %></td> 
-    </tr>
+    <tbody>
+        <% @books.each do |book| %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><%= book.body %></td>
+            <td><%= link_to 'Show', '' %></td>
+            <td><%= link_to 'Edit', '' %></td>
+            <td><%= link_to 'Destroy', '' %></td> 
+        </tr>
     <% end %>
+    </tbody>
+    
 </table>
   
 <h3>New Book</h3>
-<%= form_with model: @book, local:true do |f| %>
+<%= form_with model: @book do |f| %>
     <p>Title</p>
     <%= f.text_field :title %>
     
