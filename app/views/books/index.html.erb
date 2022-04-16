@@ -27,16 +27,14 @@
 
 <% if @book.errors.any? %>
   <%= @book.errors.count %> error prohibited this book from being saved:
-  <div>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
-  </div>
 <% end %>
 
-<%= form_with model: @book do |f| %>
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
     <p>Title</p>
     <%= f.text_field :title %>
     
